@@ -14,7 +14,7 @@ let dirY = 0;
 let dirCoor = [0,0];
 
 let curColor = 212
-let color = [212,24,112];
+let color;
 //let color = [100];
 
 
@@ -24,14 +24,17 @@ let slider3;
 let slider4;
 let slider5;
 
+let sliderR;
+let sliderG;
+let sliderB;
 
-let slider6;
 
 function setup() {
     createCanvas(800, 800);
     for(let i = 0; i < nBoids; i++){
         boids[i] = new Boid(random(width), random(height));
     }
+
 
     slider1 = createSlider(0.1,10,2.5,0);
     slider1.position(10,10);
@@ -45,31 +48,40 @@ function setup() {
     slider3.position(190,10);
     slider3.style('width', '80px');
 
-    slider4 = createSlider(-0.05,0.05,0,0);
+    slider4 = createSlider(-0.02,0.02,0,0);
     slider4.position(280,10);
     slider4.style('width', '80px');
 
-    slider5 = createSlider(-0.05,0.05,0,0);
+    slider5 = createSlider(-0.02,0.02,0,0);
     slider5.position(280,30);
     slider5.style('width', '80px');
 
+    sliderR = createSlider(0,255,212,0);
+    sliderR.position(370,10);
+    sliderR.style('width', '80px');
+
+    sliderG = createSlider(0,255,24,0);
+    sliderG.position(370,30);
+    sliderG.style('width', '80px');
+
+    sliderB = createSlider(0,255,112,0);
+    sliderB.position(370,50);
+    sliderB.style('width', '80px');
 
 
 }
 function draw() {
-    //color = [random(0,255),24,112,random(0,255)];
-    //if (curColor > 255) curColor = 255;
-    //if (curColor < 0) curColor = 0;
-    //curColor = color[0];
 
     sepMult = slider1.value();
     alignMult = slider2.value();
     cohMult = slider3.value();
+
     dirX = slider5.value();
     dirY = slider4.value();
-
-
     dirCoor = [dirX,dirY];
+
+    color = [sliderR.value(),sliderG.value(),sliderB.value()];
+
 
     background(10, 5);
     for(let i = 0; i < boids.length; i++){
@@ -120,7 +132,7 @@ class Boid {
         //let newColor = [random(0,255),color[1],color[2]]
 
         fill(color);
-        stroke(color);
+        stroke(random(0,255),color[1],color[2],random(0,15));
         ellipse(this.position.x, this.position.y, 25, 25);
     }
 
