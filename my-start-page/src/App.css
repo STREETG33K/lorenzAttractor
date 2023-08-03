@@ -6,11 +6,21 @@ body {
 
 .start-page {
   text-align: center;
-  padding: 20px;
+
+  background-color: #1c1c1c;
 }
 
+.start-page .carousel .slide img {
+  padding: 2%;
+  width: 20%;
+  height: 20%;
+  object-fit: cover; /* This will make the image cover the whole slide */
+}
+
+
+
 header {
-  background-color: #333;
+  background-color: #808080;
   color: #fff;
   padding: 10px;
 }
@@ -35,9 +45,7 @@ nav ul li a {
   color: #fff;
 }
 
-main {
-  padding: 20px;
-}
+
 
 footer {
   background-color: #333;

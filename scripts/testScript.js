@@ -92,6 +92,11 @@ function draw() {
 
 
     background(10, trail);
+    text('R: '+parseInt(sliderR.value()),450,17);
+    text('G: '+parseInt(sliderG.value()),450,37);
+    text('B: '+parseInt(sliderB.value()),450,57);
+
+
     for(let i = 0; i < boids.length; i++){
         boids[i].run(boids);
     }
