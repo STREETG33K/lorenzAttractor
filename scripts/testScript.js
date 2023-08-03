@@ -15,6 +15,8 @@ let dirCoor = [0,0];
 
 let curColor = 212
 let color;
+
+let trail = 0;
 //let color = [100];
 
 
@@ -68,6 +70,10 @@ function setup() {
     sliderB.position(370,50);
     sliderB.style('width', '80px');
 
+    slider6 = createSlider(0,255,212,0);
+    slider6.position(10,30);
+    slider6.style('width', '170px');
+
 
 }
 function draw() {
@@ -82,8 +88,10 @@ function draw() {
 
     color = [sliderR.value(),sliderG.value(),sliderB.value()];
 
+    trail = slider6.value();
 
-    background(10, 5);
+
+    background(10, trail);
     for(let i = 0; i < boids.length; i++){
         boids[i].run(boids);
     }
