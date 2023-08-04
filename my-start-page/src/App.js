@@ -20,7 +20,7 @@ function App() {
                             <a href="/">About</a>
                         </li>
                         <li>
-                            <a href="/boids.html" target="_blank" rel="noopener noreferrer" >Projects</a>
+                            <a href="/Simulations/boids.html" target="_blank" rel="noopener noreferrer" >Projects</a>
                         </li>
                     </ul>
                 </nav>
